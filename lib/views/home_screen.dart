@@ -10,6 +10,17 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Simple Model"),
+      ),
+      body: ListView.builder(
+          itemCount: Model.items.length,
+          itemBuilder: (context, index) {
+            return ModelDesign(
+              item: Model.items[index],
+            );
+          }),
+    );
   }
 }
